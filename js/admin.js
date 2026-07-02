@@ -1,333 +1,271 @@
-import { Octokit } from "@octokit/rest";
+const elements = {};
 
-const OWNER = process.env.GITHUB_OWNER;
-const REPO = process.env.GITHUB_REPO;
-const BRANCH = process.env.GITHUB_BRANCH || "main";
-const TOKEN = process.env.GITHUB_TOKEN;
+document.addEventListener("DOMContentLoaded", init);
 
-const octokit = new Octokit({ auth: TOKEN });
+async function init() {
+  cache();
+  bindMenu();
+  await loadCategories();
+  bindForm();
+  setYear();
+}
 
-const VENDORS_PATH = "data/vendors.json";
-const CATEGORIES_PATH = "data/categories.json";
+function cache() {
+  elements.menuToggle = document.getElementById("menuToggle");
+  elements.mobileMenu = document.getElementById("mobileMenu");
+  elements.form = document.getElementById("vendorForm");
+  elements.category = document.getElementById("category");
+  elements.newCategoryGroup = document.getElementById("newCategoryGroup");
+  elements.newCategoryName = document.getElementById("newCategoryName");
+  elements.photo = document.getElementById("photo");
+  elements.year = document.getElementById("year");
+}
 
-export default async function handler(req, res) {
-  setCors(res);
+function bindMenu() {
+  elements.menuToggle?.addEventListener("click", () => {
+    const open = elements.mobileMenu.classList.toggle("open");
+    elements.menuToggle.setAttribute("aria-expanded", String(open));
+  });
 
-  if (req.method === "OPTIONS") {
-    return res.status(204).end();
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".site-header")) {
+      elements.mobileMenu?.classList.remove("open");
+      elements.menuToggle?.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+async function loadCategories() {
+  try {
+    const response = await fetch("data/categories.json");
+    if (!response.ok) {
+      throw new Error("Unable to load categories.");
+    }
+
+    const data = await response.json();
+    const currentValue = elements.category.value;
+
+    elements.category.innerHTML = '<option value="">Choose category</option>';
+
+    (data.categories || []).forEach((category) => {
+      const option = document.createElement("option");
+      option.value = category.id;
+      option.textContent = category.name;
+      elements.category.appendChild(option);
+    });
+
+    const newOption = document.createElement("option");
+    newOption.value = "__new__";
+    newOption.textContent = "+ Add New Category";
+    elements.category.appendChild(newOption);
+
+    if (currentValue) {
+      elements.category.value = currentValue;
+    }
+  } catch (error) {
+    console.error(error);
+    showMessage("Could not load categories.", "error");
+  }
+}
+
+function bindForm() {
+  elements.category.addEventListener("change", () => {
+    const isNewCategory = elements.category.value === "__new__";
+    elements.newCategoryGroup.classList.toggle("hidden", !isNewCategory);
+
+    if (!isNewCategory) {
+      elements.newCategoryName.value = "";
+    }
+  });
+
+  elements.photo.addEventListener("change", previewImage);
+
+  elements.form.addEventListener("reset", () => {
+    setTimeout(() => {
+      elements.newCategoryGroup.classList.add("hidden");
+      elements.newCategoryName.value = "";
+      removePreview();
+    }, 0);
+  });
+
+  elements.form.addEventListener("submit", submitForm);
+}
+
+async function submitForm(event) {
+  event.preventDefault();
+
+  const validation = validateForm();
+  if (!validation.ok) {
+    showMessage(validation.message, "error");
+    return;
   }
 
-  if (req.method !== "POST") {
-    return res.status(405).json({
-      success: false,
-      message: "Method Not Allowed",
-    });
-  }
+  const services = getMultiLineValue("services");
+  const workingDays = [...document.querySelectorAll('input[name="workingDays"]:checked')].map((input) => input.value);
+  const photoFile = elements.photo.files?.[0] || null;
 
-  if (!OWNER || !REPO || !TOKEN) {
-    return res.status(500).json({
-      success: false,
-      message: "Missing GitHub environment variables.",
-    });
+  const vendor = {
+    name: getValue("businessName"),
+    owner: getValue("ownerName"),
+    phone: getValue("phone"),
+    email: getValue("email"),
+    website: getValue("website"),
+    maps: getValue("maps"),
+    address: getValue("address"),
+    description: getValue("description"),
+    category: elements.category.value,
+    newCategory: elements.category.value === "__new__" ? getValue("newCategoryName") : "",
+    workingDays,
+    openingTime: getValue("openingTime"),
+    closingTime: getValue("closingTime"),
+    rating: Number.parseFloat(getValue("rating")) || 0,
+    services,
+    social: {
+      instagram: getValue("instagram"),
+      facebook: getValue("facebook")
+    },
+    reviewProvider: "Google",
+    isVerified: false,
+    imageName: photoFile ? photoFile.name : "",
+    logo: getValue("logo"),
+    gallery: []
+  };
+
+  const formData = new FormData();
+  formData.append("vendor", JSON.stringify(vendor));
+  if (photoFile) {
+    formData.append("image", photoFile);
   }
 
   try {
-    const body = parseBody(req);
+    const submitButton = elements.form.querySelector('button[type="submit"]');
+    setLoadingState(submitButton, true);
 
-    const vendorInput = normalizeVendorInput(body);
-    validateVendorInput(vendorInput);
-
-    const categoriesState = await readJsonFile(CATEGORIES_PATH, { categories: [] });
-    const vendorsState = await readJsonFile(VENDORS_PATH, { vendors: [] });
-
-    const categoryResult = resolveCategory(categoriesState, vendorInput);
-    const vendorId = generateVendorId(vendorsState.vendors || []);
-
-    const newVendor = {
-      id: vendorId,
-      name: vendorInput.name,
-      owner: vendorInput.owner,
-      phone: vendorInput.phone,
-      email: vendorInput.email || "",
-      website: vendorInput.website || "",
-      maps: vendorInput.maps,
-      address: vendorInput.address,
-      description: vendorInput.description,
-      category: categoryResult.categoryId,
-      categoryName: categoryResult.categoryName,
-      workingDays: vendorInput.workingDays,
-      openingTime: vendorInput.openingTime,
-      closingTime: vendorInput.closingTime,
-      rating: Number.isFinite(vendorInput.rating) ? vendorInput.rating : 0,
-      services: vendorInput.services,
-      social: {
-        instagram: vendorInput.instagram || "",
-        facebook: vendorInput.facebook || "",
-      },
-      image: vendorInput.image || "",
-      logo: vendorInput.logo || "",
-      gallery: Array.isArray(vendorInput.gallery) ? vendorInput.gallery : [],
-      reviewProvider: vendorInput.reviewProvider || "Google",
-      isVerified: Boolean(vendorInput.isVerified ?? false),
-      createdAt: new Date().toISOString(),
-    };
-
-    const vendors = Array.isArray(vendorsState.vendors) ? vendorsState.vendors : [];
-    vendors.push(newVendor);
-
-    await writeJsonFile(
-      VENDORS_PATH,
-      { vendors },
-      `Add vendor: ${newVendor.name}`,
-      vendorsState.sha
-    );
-
-    if (categoryResult.createdCategory) {
-      const categories = Array.isArray(categoriesState.categories) ? categoriesState.categories : [];
-      categories.push({
-        id: categoryResult.categoryId,
-        name: categoryResult.categoryName,
-      });
-
-      await writeJsonFile(
-        CATEGORIES_PATH,
-        { categories },
-        `Add category: ${categoryResult.categoryName}`,
-        categoriesState.sha
-      );
-    }
-
-    return res.status(200).json({
-      success: true,
-      message: "Vendor added successfully.",
-      vendor: newVendor,
-      categoryAdded: Boolean(categoryResult.createdCategory),
+    const response = await fetch("/api/add-vendor", {
+      method: "POST",
+      body: formData
     });
-  } catch (error) {
-    console.error("add-vendor error:", error);
 
-    const message =
-      error instanceof Error ? error.message : "Unable to add vendor.";
-
-    return res.status(400).json({
+    const result = await response.json().catch(() => ({
       success: false,
-      message,
-    });
-  }
-}
+      message: "Invalid server response."
+    }));
 
-function setCors(res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-}
-
-function parseBody(req) {
-  if (!req.body) return {};
-  if (typeof req.body === "string") {
-    try {
-      return JSON.parse(req.body);
-    } catch {
-      throw new Error("Invalid JSON body.");
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Unable to add vendor.");
     }
+
+    showMessage(result.message || "Vendor added successfully.", "success");
+    elements.form.reset();
+    removePreview();
+    await loadCategories();
+  } catch (error) {
+    console.error(error);
+    showMessage(error.message || "Unable to contact the server.", "error");
+  } finally {
+    const submitButton = elements.form.querySelector('button[type="submit"]');
+    setLoadingState(submitButton, false);
   }
-  return req.body;
 }
 
-function normalizeVendorInput(body) {
-  const workingDays = Array.isArray(body.workingDays) ? body.workingDays : [];
-  const services = Array.isArray(body.services)
-    ? body.services
-    : typeof body.services === "string"
-      ? body.services
-          .split("\n")
-          .map((item) => item.trim())
-          .filter(Boolean)
-      : [];
-
-  return {
-    name: cleanText(body.name),
-    owner: cleanText(body.owner),
-    phone: cleanText(body.phone),
-    email: cleanText(body.email),
-    website: cleanText(body.website),
-    maps: cleanText(body.maps),
-    address: cleanText(body.address),
-    description: cleanText(body.description),
-    category: cleanText(body.category),
-    newCategory: cleanText(body.newCategory),
-    workingDays: workingDays.map(cleanText).filter(Boolean),
-    openingTime: cleanText(body.openingTime),
-    closingTime: cleanText(body.closingTime),
-    rating: body.rating === "" || body.rating == null ? 0 : Number(body.rating),
-    services: services.map(cleanText).filter(Boolean),
-    social: body.social && typeof body.social === "object" ? body.social : {},
-    instagram: cleanText(body.instagram),
-    facebook: cleanText(body.facebook),
-    image: cleanText(body.image),
-    logo: cleanText(body.logo),
-    gallery: Array.isArray(body.gallery) ? body.gallery.map(cleanText).filter(Boolean) : [],
-    reviewProvider: cleanText(body.reviewProvider) || "Google",
-    isVerified: Boolean(body.isVerified),
-  };
-}
-
-function validateVendorInput(vendor) {
-  const required = [
-    ["name", "Business name is required."],
-    ["owner", "Owner name is required."],
+function validateForm() {
+  const requiredFields = [
+    ["businessName", "Business name is required."],
+    ["ownerName", "Owner name is required."],
     ["phone", "Phone number is required."],
     ["maps", "Google Maps link is required."],
     ["address", "Address is required."],
     ["description", "Description is required."],
     ["openingTime", "Opening time is required."],
-    ["closingTime", "Closing time is required."],
+    ["closingTime", "Closing time is required."]
   ];
 
-  for (const [field, message] of required) {
-    if (!vendor[field]) {
-      throw new Error(message);
+  for (const [id, message] of requiredFields) {
+    if (!getValue(id)) {
+      return { ok: false, message };
     }
   }
 
-  if (!vendor.workingDays.length) {
-    throw new Error("Select at least one working day.");
+  const workingDays = document.querySelectorAll('input[name="workingDays"]:checked');
+  if (!workingDays.length) {
+    return { ok: false, message: "Select at least one working day." };
   }
 
-  if (!vendor.category && !vendor.newCategory) {
-    throw new Error("Select a category or add a new one.");
+  if (!elements.category.value) {
+    return { ok: false, message: "Select a category." };
   }
 
-  if (Number.isNaN(vendor.rating)) {
-    vendor.rating = 0;
+  if (elements.category.value === "__new__" && !getValue("newCategoryName")) {
+    return { ok: false, message: "Enter a new category name." };
   }
+
+  if (!elements.photo.files?.length) {
+    return { ok: false, message: "Select a photo for the vendor." };
+  }
+
+  return { ok: true };
 }
 
-function resolveCategory(categoriesState, vendorInput) {
-  const categories = Array.isArray(categoriesState.categories)
-    ? categoriesState.categories
-    : [];
-
-  const existing = categories.find(
-    (item) => item.id === vendorInput.category
-  );
-
-  if (existing) {
-    return {
-      categoryId: existing.id,
-      categoryName: existing.name,
-      createdCategory: false,
-    };
-  }
-
-  if (!vendorInput.newCategory && vendorInput.category) {
-    const fallbackName =
-      prettifyLabel(vendorInput.category);
-
-    return {
-      categoryId: vendorInput.category,
-      categoryName: fallbackName,
-      createdCategory: false,
-    };
-  }
-
-  const categoryName = vendorInput.newCategory || prettifyLabel(vendorInput.category);
-
-  return {
-    categoryId: slugify(categoryName || vendorInput.category),
-    categoryName,
-    createdCategory: !existing,
-  };
+function getValue(id) {
+  return document.getElementById(id)?.value.trim() || "";
 }
 
-async function readJsonFile(path, fallbackValue) {
-  try {
-    const response = await octokit.repos.getContent({
-      owner: OWNER,
-      repo: REPO,
-      path,
-      ref: BRANCH,
-    });
-
-    const data = Array.isArray(response.data) ? null : response.data;
-
-    if (!data || !("content" in data)) {
-      return { ...fallbackValue, sha: null };
-    }
-
-    const content = Buffer.from(data.content, data.encoding || "base64").toString("utf8");
-    const parsed = safeParseJson(content, fallbackValue);
-
-    return {
-      ...parsed,
-      sha: data.sha,
-    };
-  } catch (error) {
-    if (error?.status === 404) {
-      return { ...fallbackValue, sha: null };
-    }
-
-    throw error;
-  }
+function getMultiLineValue(id) {
+  return getValue(id)
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
 }
 
-async function writeJsonFile(path, payload, message, sha) {
-  const content = JSON.stringify(payload, null, 2);
-  const encoded = Buffer.from(content, "utf8").toString("base64");
+function previewImage() {
+  removePreview();
 
-  const request = {
-    owner: OWNER,
-    repo: REPO,
-    path,
-    message,
-    content: encoded,
-    branch: BRANCH,
-  };
+  const file = elements.photo.files?.[0];
+  if (!file) return;
 
-  if (sha) {
-    request.sha = sha;
-  }
+  const img = document.createElement("img");
+  img.id = "imagePreview";
+  img.alt = "Selected vendor photo preview";
+  img.style.marginTop = "1rem";
+  img.style.maxWidth = "220px";
+  img.style.width = "100%";
+  img.style.borderRadius = "16px";
+  img.style.border = "1px solid rgba(177, 18, 38, 0.18)";
+  img.style.boxShadow = "0 10px 25px rgba(58, 31, 31, 0.08)";
+  img.src = URL.createObjectURL(file);
 
-  await octokit.repos.createOrUpdateFileContents(request);
+  elements.photo.parentElement.appendChild(img);
 }
 
-function safeParseJson(text, fallbackValue) {
-  try {
-    return JSON.parse(text);
-  } catch {
-    return fallbackValue;
+function removePreview() {
+  document.getElementById("imagePreview")?.remove();
+}
+
+function setLoadingState(button, loading) {
+  if (!button) return;
+  button.disabled = loading;
+  button.textContent = loading ? "Adding..." : "Add vendor";
+}
+
+function showMessage(message, type = "success") {
+  const existing = document.getElementById("adminMessage");
+  existing?.remove();
+
+  const box = document.createElement("div");
+  box.id = "adminMessage";
+  box.className = `admin-message ${type}`;
+  box.textContent = message;
+
+  elements.form.prepend(box);
+
+  window.setTimeout(() => {
+    box.remove();
+  }, 5000);
+}
+
+function setYear() {
+  if (elements.year) {
+    elements.year.textContent = new Date().getFullYear();
   }
 }
 
-function generateVendorId(vendors) {
-  const existing = new Set(
-    vendors.map((vendor) => String(vendor.id))
-  );
-
-  let id = Date.now();
-
-  while (existing.has(String(id))) {
-    id += 1;
-  }
-
-  return id;
-}
-
-function cleanText(value) {
-  return typeof value === "string" ? value.trim() : "";
-}
-
-function slugify(value) {
-  return String(value || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function prettifyLabel(value) {
-  return String(value || "")
-    .replace(/[-_]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (ch) => ch.toUpperCase());
-}
