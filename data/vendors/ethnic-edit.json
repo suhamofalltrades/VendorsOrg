@@ -1,0 +1,38 @@
+{
+  "id": "ethnic-edit",
+  "categoryId": "clothing",
+  "rank": 4,
+  "name": "Ethnic Edit",
+  "owner": "Moumita Paul",
+  "rating": 4.8,
+  "reviewProvider": "Google",
+  "categoryTag": "Ethnic wear",
+  "address": "Lala Road, Hailakandi",
+  "description": "Traditional wear with modern styling.",
+  "phone": "+91 9808041104",
+  "email": "hello@ethnic-edit.example",
+  "website": "https://ethnic-edit.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Ethnic wear",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/ethnic-edit.svg"
+  ],
+  "logo": "assets/logos/ethnic-edit.svg",
+  "image": "assets/images/ethnic-edit.svg",
+  "location": "Lala Road, Hailakandi",
+  "subtitle": "Trusted ethnic wear in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "market-nook",
+  "categoryId": "groceries",
+  "rank": 5,
+  "name": "Market Nook",
+  "owner": "Nadia Khatun",
+  "rating": 4.8,
+  "reviewProvider": "Google",
+  "categoryTag": "Convenience store",
+  "address": "Lala Bazar, Hailakandi",
+  "description": "Small shop with fast-moving goods.",
+  "phone": "+91 9809051105",
+  "email": "hello@market-nook.example",
+  "website": "https://market-nook.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Convenience store",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/market-nook.svg"
+  ],
+  "logo": "assets/logos/market-nook.svg",
+  "image": "assets/images/market-nook.svg",
+  "location": "Lala Bazar, Hailakandi",
+  "subtitle": "Trusted convenience store in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

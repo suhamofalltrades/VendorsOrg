@@ -1,0 +1,38 @@
+{
+  "id": "aura-accessories",
+  "categoryId": "clothing",
+  "rank": 6,
+  "name": "Aura Accessories",
+  "owner": "Sajid Khan",
+  "rating": 4.7,
+  "reviewProvider": "Google",
+  "categoryTag": "Accessories",
+  "address": "Market Lane, Hailakandi",
+  "description": "Accessories that finish the look.",
+  "phone": "+91 9808061106",
+  "email": "hello@aura-accessories.example",
+  "website": "https://aura-accessories.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Accessories",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/aura-accessories.svg"
+  ],
+  "logo": "assets/logos/aura-accessories.svg",
+  "image": "assets/images/aura-accessories.svg",
+  "location": "Market Lane, Hailakandi",
+  "subtitle": "Trusted accessories in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

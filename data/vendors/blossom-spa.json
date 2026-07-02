@@ -1,0 +1,38 @@
+{
+  "id": "blossom-spa",
+  "categoryId": "beauty",
+  "rank": 3,
+  "name": "Blossom Spa",
+  "owner": "Nadia Begum",
+  "rating": 4.7,
+  "reviewProvider": "Google",
+  "categoryTag": "Spa",
+  "address": "Lala Bazar, Hailakandi",
+  "description": "Relaxation therapies and self-care treatments.",
+  "phone": "+91 9806031103",
+  "email": "hello@blossom-spa.example",
+  "website": "https://blossom-spa.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Spa",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/blossom-spa.svg"
+  ],
+  "logo": "assets/logos/blossom-spa.svg",
+  "image": "assets/images/blossom-spa.svg",
+  "location": "Lala Bazar, Hailakandi",
+  "subtitle": "Trusted spa in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

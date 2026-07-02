@@ -1,0 +1,38 @@
+{
+  "id": "cotton-lane",
+  "categoryId": "clothing",
+  "rank": 3,
+  "name": "Cotton Lane",
+  "owner": "Razia Begum",
+  "rating": 4.7,
+  "reviewProvider": "Google",
+  "categoryTag": "Clothing",
+  "address": "Central Market, Hailakandi",
+  "description": "Comfort wear with easy alterations.",
+  "phone": "+91 9808031103",
+  "email": "hello@cotton-lane.example",
+  "website": "https://cotton-lane.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Clothing",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/cotton-lane.svg"
+  ],
+  "logo": "assets/logos/cotton-lane.svg",
+  "image": "assets/images/cotton-lane.svg",
+  "location": "Central Market, Hailakandi",
+  "subtitle": "Trusted clothing in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "stitch-and-story",
+  "categoryId": "clothing",
+  "rank": 5,
+  "name": "Stitch & Story",
+  "owner": "Nafisa Ali",
+  "rating": 4.6,
+  "reviewProvider": "Google",
+  "categoryTag": "Tailor",
+  "address": "College Road, Hailakandi",
+  "description": "Custom stitching and repair work.",
+  "phone": "+91 9808051105",
+  "email": "hello@stitch-and-story.example",
+  "website": "https://stitch-and-story.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Tailor",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/stitch-and-story.svg"
+  ],
+  "logo": "assets/logos/stitch-and-story.svg",
+  "image": "assets/images/stitch-and-story.svg",
+  "location": "College Road, Hailakandi",
+  "subtitle": "Trusted tailor in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

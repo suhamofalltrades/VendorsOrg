@@ -1,0 +1,38 @@
+{
+  "id": "green-corner",
+  "categoryId": "groceries",
+  "rank": 3,
+  "name": "Green Corner",
+  "owner": "Sanjana Roy",
+  "rating": 4.7,
+  "reviewProvider": "Google",
+  "categoryTag": "Essentials",
+  "address": "Ward 2, Hailakandi",
+  "description": "Vegetables, snacks, and pantry items.",
+  "phone": "+91 9809031103",
+  "email": "hello@green-corner.example",
+  "website": "https://green-corner.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Essentials",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/green-corner.svg"
+  ],
+  "logo": "assets/logos/green-corner.svg",
+  "image": "assets/images/green-corner.svg",
+  "location": "Ward 2, Hailakandi",
+  "subtitle": "Trusted essentials in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

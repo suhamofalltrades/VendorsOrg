@@ -1,0 +1,38 @@
+{
+  "id": "pearl-parlour",
+  "categoryId": "beauty",
+  "rank": 4,
+  "name": "Pearl Parlour",
+  "owner": "Sonia Paul",
+  "rating": 4.6,
+  "reviewProvider": "Google",
+  "categoryTag": "Beauty parlour",
+  "address": "Market Area, Hailakandi",
+  "description": "Everyday styling and event preparation.",
+  "phone": "+91 9806041104",
+  "email": "hello@pearl-parlour.example",
+  "website": "https://pearl-parlour.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Beauty parlour",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/pearl-parlour.svg"
+  ],
+  "logo": "assets/logos/pearl-parlour.svg",
+  "image": "assets/images/pearl-parlour.svg",
+  "location": "Market Area, Hailakandi",
+  "subtitle": "Trusted beauty parlour in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

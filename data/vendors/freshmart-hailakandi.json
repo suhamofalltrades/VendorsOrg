@@ -1,0 +1,38 @@
+{
+  "id": "freshmart-hailakandi",
+  "categoryId": "groceries",
+  "rank": 1,
+  "name": "FreshMart Hailakandi",
+  "owner": "Hasina Begum",
+  "rating": 4.9,
+  "reviewProvider": "Google",
+  "categoryTag": "Grocery store",
+  "address": "Central Market, Hailakandi",
+  "description": "Fresh produce and daily essentials.",
+  "phone": "+91 9809011101",
+  "email": "hello@freshmart-hailakandi.example",
+  "website": "https://freshmart-hailakandi.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Grocery store",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/freshmart-hailakandi.svg"
+  ],
+  "logo": "assets/logos/freshmart-hailakandi.svg",
+  "image": "assets/images/freshmart-hailakandi.svg",
+  "location": "Central Market, Hailakandi",
+  "subtitle": "Trusted grocery store in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

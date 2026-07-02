@@ -1,0 +1,38 @@
+{
+  "id": "crimson-medical",
+  "categoryId": "medical",
+  "rank": 3,
+  "name": "Crimson Medical",
+  "owner": "Nafisa Begum",
+  "rating": 4.7,
+  "reviewProvider": "Google",
+  "categoryTag": "Medical store",
+  "address": "Market Area, Hailakandi",
+  "description": "Common medicines and medical supplies.",
+  "phone": "+91 9807031103",
+  "email": "hello@crimson-medical.example",
+  "website": "https://crimson-medical.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Medical store",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/crimson-medical.svg"
+  ],
+  "logo": "assets/logos/crimson-medical.svg",
+  "image": "assets/images/crimson-medical.svg",
+  "location": "Market Area, Hailakandi",
+  "subtitle": "Trusted medical store in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

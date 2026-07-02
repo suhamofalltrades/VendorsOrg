@@ -1,0 +1,38 @@
+{
+  "id": "crimson-wardrobe",
+  "categoryId": "clothing",
+  "rank": 2,
+  "name": "Crimson Wardrobe",
+  "owner": "Imran Hussain",
+  "rating": 4.8,
+  "reviewProvider": "Google",
+  "categoryTag": "Fashion store",
+  "address": "Station Road, Hailakandi",
+  "description": "Daily wear and festive selections.",
+  "phone": "+91 9808021102",
+  "email": "hello@crimson-wardrobe.example",
+  "website": "https://crimson-wardrobe.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Fashion store",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/crimson-wardrobe.svg"
+  ],
+  "logo": "assets/logos/crimson-wardrobe.svg",
+  "image": "assets/images/crimson-wardrobe.svg",
+  "location": "Station Road, Hailakandi",
+  "subtitle": "Trusted fashion store in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

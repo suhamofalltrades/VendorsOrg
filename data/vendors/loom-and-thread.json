@@ -1,0 +1,38 @@
+{
+  "id": "loom-and-thread",
+  "categoryId": "clothing",
+  "rank": 1,
+  "name": "Loom & Thread",
+  "owner": "Samira Khan",
+  "rating": 4.9,
+  "reviewProvider": "Google",
+  "categoryTag": "Boutique",
+  "address": "Mazar Road, Hailakandi",
+  "description": "Tailoring, ethnic collections, and fittings.",
+  "phone": "+91 9808011101",
+  "email": "hello@loom-and-thread.example",
+  "website": "https://loom-and-thread.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Boutique",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/loom-and-thread.svg"
+  ],
+  "logo": "assets/logos/loom-and-thread.svg",
+  "image": "assets/images/loom-and-thread.svg",
+  "location": "Mazar Road, Hailakandi",
+  "subtitle": "Trusted boutique in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

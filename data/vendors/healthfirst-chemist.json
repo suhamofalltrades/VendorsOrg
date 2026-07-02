@@ -1,0 +1,38 @@
+{
+  "id": "healthfirst-chemist",
+  "categoryId": "medical",
+  "rank": 2,
+  "name": "HealthFirst Chemist",
+  "owner": "Riaz Hussain",
+  "rating": 4.8,
+  "reviewProvider": "Google",
+  "categoryTag": "Chemist",
+  "address": "Station Road, Hailakandi",
+  "description": "Trusted pharmacy and fast service.",
+  "phone": "+91 9807021102",
+  "email": "hello@healthfirst-chemist.example",
+  "website": "https://healthfirst-chemist.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Chemist",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/healthfirst-chemist.svg"
+  ],
+  "logo": "assets/logos/healthfirst-chemist.svg",
+  "image": "assets/images/healthfirst-chemist.svg",
+  "location": "Station Road, Hailakandi",
+  "subtitle": "Trusted chemist in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "daily-basket",
+  "categoryId": "groceries",
+  "rank": 2,
+  "name": "Daily Basket",
+  "owner": "Amit Saha",
+  "rating": 4.8,
+  "reviewProvider": "Google",
+  "categoryTag": "General store",
+  "address": "Station Road, Hailakandi",
+  "description": "Quick checkout and household basics.",
+  "phone": "+91 9809021102",
+  "email": "hello@daily-basket.example",
+  "website": "https://daily-basket.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "General store",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/daily-basket.svg"
+  ],
+  "logo": "assets/logos/daily-basket.svg",
+  "image": "assets/images/daily-basket.svg",
+  "location": "Station Road, Hailakandi",
+  "subtitle": "Trusted general store in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

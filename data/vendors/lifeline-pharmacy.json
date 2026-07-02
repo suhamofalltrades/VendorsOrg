@@ -1,0 +1,38 @@
+{
+  "id": "lifeline-pharmacy",
+  "categoryId": "medical",
+  "rank": 4,
+  "name": "LifeLine Pharmacy",
+  "owner": "Ayesha Ahmed",
+  "rating": 4.6,
+  "reviewProvider": "Google",
+  "categoryTag": "Pharmacy",
+  "address": "Lala Bazar, Hailakandi",
+  "description": "Daily medical needs and support.",
+  "phone": "+91 9807041104",
+  "email": "hello@lifeline-pharmacy.example",
+  "website": "https://lifeline-pharmacy.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Pharmacy",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/lifeline-pharmacy.svg"
+  ],
+  "logo": "assets/logos/lifeline-pharmacy.svg",
+  "image": "assets/images/lifeline-pharmacy.svg",
+  "location": "Lala Bazar, Hailakandi",
+  "subtitle": "Trusted pharmacy in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

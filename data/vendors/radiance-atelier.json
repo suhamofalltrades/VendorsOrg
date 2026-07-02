@@ -1,0 +1,38 @@
+{
+  "id": "radiance-atelier",
+  "categoryId": "beauty",
+  "rank": 5,
+  "name": "Radiance Atelier",
+  "owner": "Farhana Ali",
+  "rating": 4.8,
+  "reviewProvider": "Google",
+  "categoryTag": "Studio",
+  "address": "Civil Hospital Road, Hailakandi",
+  "description": "Precision beauty services with modern finishes.",
+  "phone": "+91 9806051105",
+  "email": "hello@radiance-atelier.example",
+  "website": "https://radiance-atelier.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Studio",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/radiance-atelier.svg"
+  ],
+  "logo": "assets/logos/radiance-atelier.svg",
+  "image": "assets/images/radiance-atelier.svg",
+  "location": "Civil Hospital Road, Hailakandi",
+  "subtitle": "Trusted studio in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "prime-grocers",
+  "categoryId": "groceries",
+  "rank": 6,
+  "name": "Prime Grocers",
+  "owner": "Rohit Das",
+  "rating": 4.7,
+  "reviewProvider": "Google",
+  "categoryTag": "Grocer",
+  "address": "College Road, Hailakandi",
+  "description": "Quality staples and friendly service.",
+  "phone": "+91 9809061106",
+  "email": "hello@prime-grocers.example",
+  "website": "https://prime-grocers.example",
+  "hours": [
+    "Mon–Sat",
+    "9:00 AM – 8:00 PM",
+    "Sunday",
+    "10:00 AM – 2:00 PM"
+  ],
+  "services": [
+    "Grocer",
+    "Walk-ins",
+    "Appointments",
+    "Online inquiry"
+  ],
+  "gallery": [
+    "assets/images/prime-grocers.svg"
+  ],
+  "logo": "assets/logos/prime-grocers.svg",
+  "image": "assets/images/prime-grocers.svg",
+  "location": "College Road, Hailakandi",
+  "subtitle": "Trusted grocer in Hailakandi.",
+  "social": {
+    "instagram": "#",
+    "facebook": "#"
+  }
+}
