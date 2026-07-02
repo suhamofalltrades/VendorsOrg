@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Category | VendorsOrg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">VO</span>
+        <span>VendorsOrg</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-desktop">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#categories">Categories</a></li>
+          <li><a href="index.html#vendor-cta">Become a vendor</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
+    </div>
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#vendor-cta">Become a vendor</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container stack">
+      <div class="breadcrumbs" id="breadcrumb">Category</div>
+      <h1 class="page-title" id="categoryTitle">Category</h1>
+      <p class="small" id="categorySubtitle"></p>
+      <div class="badge" id="categoryCount"></div>
+      <div class="vendor-grid" id="categoryVendorGrid" style="margin-top:1.2rem"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>VendorsOrg</div>
+      <div id="year"></div>
+    </div>
+  </footer>
+
+  <script src="js/category.js" defer></script>
+</body>
+</html>
