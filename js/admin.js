@@ -82,7 +82,7 @@ function bindForm() {
   elements.form.addEventListener("submit", submitForm);
 }
 
-function submitForm(e) {
+async function submitForm(e) {
   e.preventDefault();
 
   const days = [...document.querySelectorAll(
@@ -137,11 +137,32 @@ function submitForm(e) {
     isVerified: false
   };
 
-  console.clear();
-  console.log("Vendor Object");
-  console.log(vendor);
+  try {
 
-  alert("Vendor object created successfully. Check the browser console.");
+    const response = await fetch("/api/add-vendor", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(vendor)
+    });
+
+    const result = await response.json();
+
+    alert(result.message);
+
+    if (result.success) {
+        elements.form.reset();
+        removePreview();
+    }
+
+} catch (error) {
+
+    console.error(error);
+
+    alert("Unable to contact the server.");
+
+}
 }
 
 function value(id) {
