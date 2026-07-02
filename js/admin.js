@@ -43,6 +43,7 @@ async function loadCategories() {
     }
 
     const data = await response.json();
+    renderExistingCategories(data.categories || []);
     const currentValue = elements.category.value;
 
     elements.category.innerHTML = '<option value="">Choose category</option>';
@@ -173,7 +174,6 @@ function validateForm() {
     ["businessName", "Business name is required."],
     ["ownerName", "Owner name is required."],
     ["phone", "Phone number is required."],
-    ["maps", "Google Maps link is required."],
     ["address", "Address is required."],
     ["description", "Description is required."],
     ["openingTime", "Opening time is required."],
@@ -269,3 +269,16 @@ function setYear() {
   }
 }
 
+function renderExistingCategories(categories) {
+    const container = document.getElementById("existingCategories");
+
+    if (!container) return;
+
+    container.innerHTML = categories
+        .map(category => `
+            <div class="badge">
+                ${category.name}
+            </div>
+        `)
+        .join("");
+}
