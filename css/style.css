@@ -141,14 +141,14 @@ header.site-header{
   font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;margin:0 0 1rem;font-weight:850
 }
 .categories-grid{display:grid;gap:2.2rem}
-.category-block{padding:0}
+.category-block{padding:40px;margin-bottom:70px;}
 .category-head{
-  display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1rem
+  display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:5rem
 }
-.category-head h3{margin:0;font-size:1.55rem}
+.category-head h3{margin:0;font-size:2rem}
 .category-head a{color:var(--primary);font-weight:700}
 .vendor-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1rem
 }
 .vendor-card{
   display:block;
