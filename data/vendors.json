@@ -39,6 +39,47 @@
         "instagram": "https://instagram.com/example",
         "facebook": "https://facebook.com/example"
       }
+    },
+    {
+      "id": 1783021611780,
+      "name": "Colossus Search Engine",
+      "owner": "Suham Dutta",
+      "phone": "+91 1111111111",
+      "email": "",
+      "website": "https://suham.is-not.cool",
+      "maps": "https://suham.is-not.cool",
+      "address": "Shillong, Meghalaya",
+      "description": "A lightweight and simple search engine.",
+      "category": "electronics",
+      "categoryName": "Electronics",
+      "workingDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "openingTime": "12:00",
+      "closingTime": "00:00",
+      "rating": 4.3,
+      "services": [
+        "Search engine"
+      ],
+      "social": {
+        "instagram": "",
+        "facebook": ""
+      },
+      "reviewProvider": "Google",
+      "isVerified": false,
+      "image": "assets/vendors/electronics/colossus-search-engine-1783021611780.jpg",
+      "logo": "wallpaperflare.com_wallpaper.jpg",
+      "gallery": [
+        "assets/vendors/electronics/colossus-search-engine-1783021611780.jpg"
+      ],
+      "createdAt": "2026-07-02T19:46:52.921Z",
+      "updatedAt": "2026-07-02T19:46:52.921Z"
     }
   ]
 }
