@@ -1,0 +1,91 @@
+{
+  "id": "groceries",
+  "name": "Groceries & Essentials",
+  "businessCount": 6,
+  "topFour": [
+    "freshmart-hailakandi",
+    "daily-basket",
+    "green-corner",
+    "city-essentials"
+  ],
+  "vendors": [
+    {
+      "id": "freshmart-hailakandi",
+      "rank": 1,
+      "name": "FreshMart Hailakandi",
+      "owner": "Hasina Begum",
+      "rating": 4.9,
+      "reviewProvider": "Google",
+      "categoryTag": "Grocery store",
+      "address": "Central Market, Hailakandi",
+      "image": "assets/images/freshmart-hailakandi.svg",
+      "logo": "assets/logos/freshmart-hailakandi.svg",
+      "path": "data/vendors/freshmart-hailakandi.json"
+    },
+    {
+      "id": "daily-basket",
+      "rank": 2,
+      "name": "Daily Basket",
+      "owner": "Amit Saha",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "General store",
+      "address": "Station Road, Hailakandi",
+      "image": "assets/images/daily-basket.svg",
+      "logo": "assets/logos/daily-basket.svg",
+      "path": "data/vendors/daily-basket.json"
+    },
+    {
+      "id": "green-corner",
+      "rank": 3,
+      "name": "Green Corner",
+      "owner": "Sanjana Roy",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Essentials",
+      "address": "Ward 2, Hailakandi",
+      "image": "assets/images/green-corner.svg",
+      "logo": "assets/logos/green-corner.svg",
+      "path": "data/vendors/green-corner.json"
+    },
+    {
+      "id": "city-essentials",
+      "rank": 4,
+      "name": "City Essentials",
+      "owner": "Rafik Ahmed",
+      "rating": 4.6,
+      "reviewProvider": "Google",
+      "categoryTag": "Store",
+      "address": "Market Area, Hailakandi",
+      "image": "assets/images/city-essentials.svg",
+      "logo": "assets/logos/city-essentials.svg",
+      "path": "data/vendors/city-essentials.json"
+    },
+    {
+      "id": "market-nook",
+      "rank": 5,
+      "name": "Market Nook",
+      "owner": "Nadia Khatun",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Convenience store",
+      "address": "Lala Bazar, Hailakandi",
+      "image": "assets/images/market-nook.svg",
+      "logo": "assets/logos/market-nook.svg",
+      "path": "data/vendors/market-nook.json"
+    },
+    {
+      "id": "prime-grocers",
+      "rank": 6,
+      "name": "Prime Grocers",
+      "owner": "Rohit Das",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Grocer",
+      "address": "College Road, Hailakandi",
+      "image": "assets/images/prime-grocers.svg",
+      "logo": "assets/logos/prime-grocers.svg",
+      "path": "data/vendors/prime-grocers.json"
+    }
+  ]
+}

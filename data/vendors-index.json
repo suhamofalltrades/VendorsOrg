@@ -1,0 +1,214 @@
+{
+  "vendors": [
+    {
+      "id": "crimson-glow-studio",
+      "categoryId": "beauty",
+      "rank": 1,
+      "path": "data/vendors/crimson-glow-studio.json",
+      "name": "Crimson Glow Studio"
+    },
+    {
+      "id": "sundara-salon",
+      "categoryId": "beauty",
+      "rank": 2,
+      "path": "data/vendors/sundara-salon.json",
+      "name": "Sundara Salon"
+    },
+    {
+      "id": "blossom-spa",
+      "categoryId": "beauty",
+      "rank": 3,
+      "path": "data/vendors/blossom-spa.json",
+      "name": "Blossom Spa"
+    },
+    {
+      "id": "pearl-parlour",
+      "categoryId": "beauty",
+      "rank": 4,
+      "path": "data/vendors/pearl-parlour.json",
+      "name": "Pearl Parlour"
+    },
+    {
+      "id": "radiance-atelier",
+      "categoryId": "beauty",
+      "rank": 5,
+      "path": "data/vendors/radiance-atelier.json",
+      "name": "Radiance Atelier"
+    },
+    {
+      "id": "dew-and-silk",
+      "categoryId": "beauty",
+      "rank": 6,
+      "path": "data/vendors/dew-and-silk.json",
+      "name": "Dew & Silk"
+    },
+    {
+      "id": "loom-and-thread",
+      "categoryId": "clothing",
+      "rank": 1,
+      "path": "data/vendors/loom-and-thread.json",
+      "name": "Loom & Thread"
+    },
+    {
+      "id": "crimson-wardrobe",
+      "categoryId": "clothing",
+      "rank": 2,
+      "path": "data/vendors/crimson-wardrobe.json",
+      "name": "Crimson Wardrobe"
+    },
+    {
+      "id": "cotton-lane",
+      "categoryId": "clothing",
+      "rank": 3,
+      "path": "data/vendors/cotton-lane.json",
+      "name": "Cotton Lane"
+    },
+    {
+      "id": "ethnic-edit",
+      "categoryId": "clothing",
+      "rank": 4,
+      "path": "data/vendors/ethnic-edit.json",
+      "name": "Ethnic Edit"
+    },
+    {
+      "id": "stitch-and-story",
+      "categoryId": "clothing",
+      "rank": 5,
+      "path": "data/vendors/stitch-and-story.json",
+      "name": "Stitch & Story"
+    },
+    {
+      "id": "aura-accessories",
+      "categoryId": "clothing",
+      "rank": 6,
+      "path": "data/vendors/aura-accessories.json",
+      "name": "Aura Accessories"
+    },
+    {
+      "id": "freshmart-hailakandi",
+      "categoryId": "groceries",
+      "rank": 1,
+      "path": "data/vendors/freshmart-hailakandi.json",
+      "name": "FreshMart Hailakandi"
+    },
+    {
+      "id": "daily-basket",
+      "categoryId": "groceries",
+      "rank": 2,
+      "path": "data/vendors/daily-basket.json",
+      "name": "Daily Basket"
+    },
+    {
+      "id": "green-corner",
+      "categoryId": "groceries",
+      "rank": 3,
+      "path": "data/vendors/green-corner.json",
+      "name": "Green Corner"
+    },
+    {
+      "id": "city-essentials",
+      "categoryId": "groceries",
+      "rank": 4,
+      "path": "data/vendors/city-essentials.json",
+      "name": "City Essentials"
+    },
+    {
+      "id": "market-nook",
+      "categoryId": "groceries",
+      "rank": 5,
+      "path": "data/vendors/market-nook.json",
+      "name": "Market Nook"
+    },
+    {
+      "id": "prime-grocers",
+      "categoryId": "groceries",
+      "rank": 6,
+      "path": "data/vendors/prime-grocers.json",
+      "name": "Prime Grocers"
+    },
+    {
+      "id": "spice-route-diner",
+      "categoryId": "restaurants",
+      "rank": 1,
+      "path": "data/vendors/spice-route-diner.json",
+      "name": "Spice Route Diner"
+    },
+    {
+      "id": "crimson-kitchen",
+      "categoryId": "restaurants",
+      "rank": 2,
+      "path": "data/vendors/crimson-kitchen.json",
+      "name": "Crimson Kitchen"
+    },
+    {
+      "id": "biryani-house",
+      "categoryId": "restaurants",
+      "rank": 3,
+      "path": "data/vendors/biryani-house.json",
+      "name": "Biryani House"
+    },
+    {
+      "id": "river-grill",
+      "categoryId": "restaurants",
+      "rank": 4,
+      "path": "data/vendors/river-grill.json",
+      "name": "River Grill"
+    },
+    {
+      "id": "tandoor-point",
+      "categoryId": "restaurants",
+      "rank": 5,
+      "path": "data/vendors/tandoor-point.json",
+      "name": "Tandoor Point"
+    },
+    {
+      "id": "cafe-noon",
+      "categoryId": "restaurants",
+      "rank": 6,
+      "path": "data/vendors/cafe-noon.json",
+      "name": "Cafe Noon"
+    },
+    {
+      "id": "medcare-pharmacy",
+      "categoryId": "medical",
+      "rank": 1,
+      "path": "data/vendors/medcare-pharmacy.json",
+      "name": "MedCare Pharmacy"
+    },
+    {
+      "id": "healthfirst-chemist",
+      "categoryId": "medical",
+      "rank": 2,
+      "path": "data/vendors/healthfirst-chemist.json",
+      "name": "HealthFirst Chemist"
+    },
+    {
+      "id": "crimson-medical",
+      "categoryId": "medical",
+      "rank": 3,
+      "path": "data/vendors/crimson-medical.json",
+      "name": "Crimson Medical"
+    },
+    {
+      "id": "lifeline-pharmacy",
+      "categoryId": "medical",
+      "rank": 4,
+      "path": "data/vendors/lifeline-pharmacy.json",
+      "name": "LifeLine Pharmacy"
+    },
+    {
+      "id": "careplus-drugs",
+      "categoryId": "medical",
+      "rank": 5,
+      "path": "data/vendors/careplus-drugs.json",
+      "name": "CarePlus Drugs"
+    },
+    {
+      "id": "pulse-essentials",
+      "categoryId": "medical",
+      "rank": 6,
+      "path": "data/vendors/pulse-essentials.json",
+      "name": "Pulse Essentials"
+    }
+  ]
+}

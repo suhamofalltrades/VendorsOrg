@@ -1,0 +1,91 @@
+{
+  "id": "restaurants",
+  "name": "Food & Restaurants",
+  "businessCount": 6,
+  "topFour": [
+    "spice-route-diner",
+    "crimson-kitchen",
+    "biryani-house",
+    "river-grill"
+  ],
+  "vendors": [
+    {
+      "id": "spice-route-diner",
+      "rank": 1,
+      "name": "Spice Route Diner",
+      "owner": "Arif Khan",
+      "rating": 4.9,
+      "reviewProvider": "Google",
+      "categoryTag": "Restaurant",
+      "address": "Station Road, Hailakandi",
+      "image": "assets/images/spice-route-diner.svg",
+      "logo": "assets/logos/spice-route-diner.svg",
+      "path": "data/vendors/spice-route-diner.json"
+    },
+    {
+      "id": "crimson-kitchen",
+      "rank": 2,
+      "name": "Crimson Kitchen",
+      "owner": "Tania Ahmed",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Kitchen",
+      "address": "Lala Road, Hailakandi",
+      "image": "assets/images/crimson-kitchen.svg",
+      "logo": "assets/logos/crimson-kitchen.svg",
+      "path": "data/vendors/crimson-kitchen.json"
+    },
+    {
+      "id": "biryani-house",
+      "rank": 3,
+      "name": "Biryani House",
+      "owner": "Farid Ali",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Biryani",
+      "address": "Central Market, Hailakandi",
+      "image": "assets/images/biryani-house.svg",
+      "logo": "assets/logos/biryani-house.svg",
+      "path": "data/vendors/biryani-house.json"
+    },
+    {
+      "id": "river-grill",
+      "rank": 4,
+      "name": "River Grill",
+      "owner": "Moumita Saha",
+      "rating": 4.6,
+      "reviewProvider": "Google",
+      "categoryTag": "Grill",
+      "address": "College Road, Hailakandi",
+      "image": "assets/images/river-grill.svg",
+      "logo": "assets/logos/river-grill.svg",
+      "path": "data/vendors/river-grill.json"
+    },
+    {
+      "id": "tandoor-point",
+      "rank": 5,
+      "name": "Tandoor Point",
+      "owner": "Salma Begum",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Tandoor",
+      "address": "Market Lane, Hailakandi",
+      "image": "assets/images/tandoor-point.svg",
+      "logo": "assets/logos/tandoor-point.svg",
+      "path": "data/vendors/tandoor-point.json"
+    },
+    {
+      "id": "cafe-noon",
+      "rank": 6,
+      "name": "Cafe Noon",
+      "owner": "Rahul Das",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Cafe",
+      "address": "Civil Road, Hailakandi",
+      "image": "assets/images/cafe-noon.svg",
+      "logo": "assets/logos/cafe-noon.svg",
+      "path": "data/vendors/cafe-noon.json"
+    }
+  ]
+}

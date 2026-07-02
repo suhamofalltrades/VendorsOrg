@@ -1,0 +1,39 @@
+{
+  "categories": [
+    {
+      "id": "beauty",
+      "name": "Beauty & Self Care",
+      "businessCount": 6,
+      "path": "data/beauty.json",
+      "description": "Salon, spa, and grooming services with polished presentation."
+    },
+    {
+      "id": "clothing",
+      "name": "Clothing & Accessories",
+      "businessCount": 6,
+      "path": "data/clothing.json",
+      "description": "Tailoring, ethnic wear, and everyday fashion."
+    },
+    {
+      "id": "groceries",
+      "name": "Groceries & Essentials",
+      "businessCount": 6,
+      "path": "data/groceries.json",
+      "description": "Daily essentials and neighborhood markets."
+    },
+    {
+      "id": "restaurants",
+      "name": "Food & Restaurants",
+      "businessCount": 6,
+      "path": "data/restaurants.json",
+      "description": "Dining spots, cafés, and quick bites."
+    },
+    {
+      "id": "medical",
+      "name": "Medical Essentials & Pharmaceuticals",
+      "businessCount": 6,
+      "path": "data/medical.json",
+      "description": "Pharmacies and medical essentials."
+    }
+  ]
+}

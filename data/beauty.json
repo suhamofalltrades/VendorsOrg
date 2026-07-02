@@ -1,0 +1,91 @@
+{
+  "id": "beauty",
+  "name": "Beauty & Self Care",
+  "businessCount": 6,
+  "topFour": [
+    "crimson-glow-studio",
+    "sundara-salon",
+    "blossom-spa",
+    "pearl-parlour"
+  ],
+  "vendors": [
+    {
+      "id": "crimson-glow-studio",
+      "rank": 1,
+      "name": "Crimson Glow Studio",
+      "owner": "Rina Das",
+      "rating": 4.9,
+      "reviewProvider": "Google",
+      "categoryTag": "Beauty salon",
+      "address": "Station Road, Hailakandi",
+      "image": "assets/images/crimson-glow-studio.svg",
+      "logo": "assets/logos/crimson-glow-studio.svg",
+      "path": "data/vendors/crimson-glow-studio.json"
+    },
+    {
+      "id": "sundara-salon",
+      "rank": 2,
+      "name": "Sundara Salon",
+      "owner": "Mina Ahmed",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Salon",
+      "address": "College Road, Hailakandi",
+      "image": "assets/images/sundara-salon.svg",
+      "logo": "assets/logos/sundara-salon.svg",
+      "path": "data/vendors/sundara-salon.json"
+    },
+    {
+      "id": "blossom-spa",
+      "rank": 3,
+      "name": "Blossom Spa",
+      "owner": "Nadia Begum",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Spa",
+      "address": "Lala Bazar, Hailakandi",
+      "image": "assets/images/blossom-spa.svg",
+      "logo": "assets/logos/blossom-spa.svg",
+      "path": "data/vendors/blossom-spa.json"
+    },
+    {
+      "id": "pearl-parlour",
+      "rank": 4,
+      "name": "Pearl Parlour",
+      "owner": "Sonia Paul",
+      "rating": 4.6,
+      "reviewProvider": "Google",
+      "categoryTag": "Beauty parlour",
+      "address": "Market Area, Hailakandi",
+      "image": "assets/images/pearl-parlour.svg",
+      "logo": "assets/logos/pearl-parlour.svg",
+      "path": "data/vendors/pearl-parlour.json"
+    },
+    {
+      "id": "radiance-atelier",
+      "rank": 5,
+      "name": "Radiance Atelier",
+      "owner": "Farhana Ali",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Studio",
+      "address": "Civil Hospital Road, Hailakandi",
+      "image": "assets/images/radiance-atelier.svg",
+      "logo": "assets/logos/radiance-atelier.svg",
+      "path": "data/vendors/radiance-atelier.json"
+    },
+    {
+      "id": "dew-and-silk",
+      "rank": 6,
+      "name": "Dew & Silk",
+      "owner": "Ayesha Khatun",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Grooming",
+      "address": "Ward 6, Hailakandi",
+      "image": "assets/images/dew-and-silk.svg",
+      "logo": "assets/logos/dew-and-silk.svg",
+      "path": "data/vendors/dew-and-silk.json"
+    }
+  ]
+}

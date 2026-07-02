@@ -1,0 +1,91 @@
+{
+  "id": "clothing",
+  "name": "Clothing & Accessories",
+  "businessCount": 6,
+  "topFour": [
+    "loom-and-thread",
+    "crimson-wardrobe",
+    "cotton-lane",
+    "ethnic-edit"
+  ],
+  "vendors": [
+    {
+      "id": "loom-and-thread",
+      "rank": 1,
+      "name": "Loom & Thread",
+      "owner": "Samira Khan",
+      "rating": 4.9,
+      "reviewProvider": "Google",
+      "categoryTag": "Boutique",
+      "address": "Mazar Road, Hailakandi",
+      "image": "assets/images/loom-and-thread.svg",
+      "logo": "assets/logos/loom-and-thread.svg",
+      "path": "data/vendors/loom-and-thread.json"
+    },
+    {
+      "id": "crimson-wardrobe",
+      "rank": 2,
+      "name": "Crimson Wardrobe",
+      "owner": "Imran Hussain",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Fashion store",
+      "address": "Station Road, Hailakandi",
+      "image": "assets/images/crimson-wardrobe.svg",
+      "logo": "assets/logos/crimson-wardrobe.svg",
+      "path": "data/vendors/crimson-wardrobe.json"
+    },
+    {
+      "id": "cotton-lane",
+      "rank": 3,
+      "name": "Cotton Lane",
+      "owner": "Razia Begum",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Clothing",
+      "address": "Central Market, Hailakandi",
+      "image": "assets/images/cotton-lane.svg",
+      "logo": "assets/logos/cotton-lane.svg",
+      "path": "data/vendors/cotton-lane.json"
+    },
+    {
+      "id": "ethnic-edit",
+      "rank": 4,
+      "name": "Ethnic Edit",
+      "owner": "Moumita Paul",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Ethnic wear",
+      "address": "Lala Road, Hailakandi",
+      "image": "assets/images/ethnic-edit.svg",
+      "logo": "assets/logos/ethnic-edit.svg",
+      "path": "data/vendors/ethnic-edit.json"
+    },
+    {
+      "id": "stitch-and-story",
+      "rank": 5,
+      "name": "Stitch & Story",
+      "owner": "Nafisa Ali",
+      "rating": 4.6,
+      "reviewProvider": "Google",
+      "categoryTag": "Tailor",
+      "address": "College Road, Hailakandi",
+      "image": "assets/images/stitch-and-story.svg",
+      "logo": "assets/logos/stitch-and-story.svg",
+      "path": "data/vendors/stitch-and-story.json"
+    },
+    {
+      "id": "aura-accessories",
+      "rank": 6,
+      "name": "Aura Accessories",
+      "owner": "Sajid Khan",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Accessories",
+      "address": "Market Lane, Hailakandi",
+      "image": "assets/images/aura-accessories.svg",
+      "logo": "assets/logos/aura-accessories.svg",
+      "path": "data/vendors/aura-accessories.json"
+    }
+  ]
+}

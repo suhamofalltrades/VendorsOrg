@@ -1,0 +1,91 @@
+{
+  "id": "medical",
+  "name": "Medical Essentials & Pharmaceuticals",
+  "businessCount": 6,
+  "topFour": [
+    "medcare-pharmacy",
+    "healthfirst-chemist",
+    "crimson-medical",
+    "lifeline-pharmacy"
+  ],
+  "vendors": [
+    {
+      "id": "medcare-pharmacy",
+      "rank": 1,
+      "name": "MedCare Pharmacy",
+      "owner": "Dr. Farhana Ali",
+      "rating": 4.9,
+      "reviewProvider": "Google",
+      "categoryTag": "Pharmacy",
+      "address": "Civil Hospital Road, Hailakandi",
+      "image": "assets/images/medcare-pharmacy.svg",
+      "logo": "assets/logos/medcare-pharmacy.svg",
+      "path": "data/vendors/medcare-pharmacy.json"
+    },
+    {
+      "id": "healthfirst-chemist",
+      "rank": 2,
+      "name": "HealthFirst Chemist",
+      "owner": "Riaz Hussain",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Chemist",
+      "address": "Station Road, Hailakandi",
+      "image": "assets/images/healthfirst-chemist.svg",
+      "logo": "assets/logos/healthfirst-chemist.svg",
+      "path": "data/vendors/healthfirst-chemist.json"
+    },
+    {
+      "id": "crimson-medical",
+      "rank": 3,
+      "name": "Crimson Medical",
+      "owner": "Nafisa Begum",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Medical store",
+      "address": "Market Area, Hailakandi",
+      "image": "assets/images/crimson-medical.svg",
+      "logo": "assets/logos/crimson-medical.svg",
+      "path": "data/vendors/crimson-medical.json"
+    },
+    {
+      "id": "lifeline-pharmacy",
+      "rank": 4,
+      "name": "LifeLine Pharmacy",
+      "owner": "Ayesha Ahmed",
+      "rating": 4.6,
+      "reviewProvider": "Google",
+      "categoryTag": "Pharmacy",
+      "address": "Lala Bazar, Hailakandi",
+      "image": "assets/images/lifeline-pharmacy.svg",
+      "logo": "assets/logos/lifeline-pharmacy.svg",
+      "path": "data/vendors/lifeline-pharmacy.json"
+    },
+    {
+      "id": "careplus-drugs",
+      "rank": 5,
+      "name": "CarePlus Drugs",
+      "owner": "Kabir Ali",
+      "rating": 4.8,
+      "reviewProvider": "Google",
+      "categoryTag": "Chemist",
+      "address": "Ward 6, Hailakandi",
+      "image": "assets/images/careplus-drugs.svg",
+      "logo": "assets/logos/careplus-drugs.svg",
+      "path": "data/vendors/careplus-drugs.json"
+    },
+    {
+      "id": "pulse-essentials",
+      "rank": 6,
+      "name": "Pulse Essentials",
+      "owner": "Mina Saha",
+      "rating": 4.7,
+      "reviewProvider": "Google",
+      "categoryTag": "Health store",
+      "address": "College Road, Hailakandi",
+      "image": "assets/images/pulse-essentials.svg",
+      "logo": "assets/logos/pulse-essentials.svg",
+      "path": "data/vendors/pulse-essentials.json"
+    }
+  ]
+}
