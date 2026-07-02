@@ -1,0 +1,577 @@
+from pathlib import Path
+
+admin_css = r"""
+/* VendorsOrg Admin Styles
+   Standalone stylesheet for admin.html
+   Reuses the existing site palette and component language.
+*/
+
+:root {
+  --bg: #fff8e8;
+  --bg-soft: #fffdf7;
+  --surface: rgba(255, 250, 240, 0.96);
+  --surface-2: rgba(255, 255, 255, 0.82);
+  --surface-3: rgba(255, 248, 232, 0.9);
+  --line: rgba(235, 217, 183, 0.95);
+  --line-strong: rgba(177, 18, 38, 0.14);
+  --text: #351d1d;
+  --muted: #7f6262;
+  --primary: #b11226;
+  --primary-2: #d72638;
+  --accent: #f1c453;
+  --shadow: 0 18px 50px rgba(177, 18, 38, 0.11);
+  --shadow-soft: 0 10px 22px rgba(58, 31, 31, 0.08);
+  --radius-xl: 30px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(241, 196, 83, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(177, 18, 38, 0.08), transparent 24%),
+    var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.stack > * + * {
+  margin-top: 1rem;
+}
+
+.small {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.82rem;
+  border-radius: 999px;
+  border: 1px solid rgba(177, 18, 38, 0.12);
+  background: rgba(177, 18, 38, 0.07);
+  color: var(--primary);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.95rem 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(177, 18, 38, 0.18);
+}
+
+.btn.secondary:hover {
+  background: rgba(177, 18, 38, 0.06);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+/* Header / navbar */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 248, 232, 0.84);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(235, 217, 183, 0.86);
+}
+
+.navbar {
+  width: min(1180px, 92vw);
+  min-height: 80px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.78rem;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1.45rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-desktop a {
+  position: relative;
+  padding: 0.45rem 0;
+  color: var(--text);
+  font-weight: 650;
+}
+
+.nav-desktop a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.22rem;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  transition: width 180ms ease;
+}
+
+.nav-desktop a:hover::after,
+.nav-desktop a:focus-visible::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  position: relative;
+  background: var(--text);
+  display: block;
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+}
+
+.menu-toggle span::before {
+  top: -6px;
+}
+
+.menu-toggle span::after {
+  top: 6px;
+}
+
+.mobile-menu {
+  display: none;
+  padding-bottom: 1rem;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 1rem 0;
+  font-weight: 650;
+  border-top: 1px solid rgba(235, 217, 183, 0.8);
+}
+
+/* Hero */
+
+.hero {
+  padding: 5.5rem 0 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 4.9rem);
+  line-height: 0.98;
+  font-weight: 950;
+  letter-spacing: -0.05em;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-panel {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.hero-stat {
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  background: rgba(255, 250, 240, 0.9);
+  border: 1px solid rgba(235, 217, 183, 0.95);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-stat strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 1.22rem;
+}
+
+.hero-stat span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Layout */
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.detail-main,
+.detail-side {
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.detail-section {
+  margin-top: 1.3rem;
+}
+
+.detail-section h3 {
+  margin: 0 0 0.85rem;
+  font-size: 1.12rem;
+}
+
+.footer-title {
+  margin: 0 0 0.7rem;
+  font-size: 1.2rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  line-height: 1.08;
+  margin: 0;
+  font-weight: 900;
+}
+
+.empty {
+  padding: 1.2rem;
+  border-radius: 20px;
+  border: 1px dashed rgba(177, 18, 38, 0.22);
+  background: rgba(177, 18, 38, 0.04);
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Form */
+
+#vendorForm {
+  margin-top: 1.35rem;
+}
+
+#vendorForm label {
+  display: block;
+}
+
+#vendorForm label > span {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  font-weight: 650;
+}
+
+#vendorForm input[type="text"],
+#vendorForm input[type="email"],
+#vendorForm input[type="url"],
+#vendorForm input[type="tel"],
+#vendorForm input[type="number"],
+#vendorForm input[type="time"],
+#vendorForm select,
+#vendorForm textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(177, 18, 38, 0.16);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text);
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+#vendorForm textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#vendorForm input:focus,
+#vendorForm select:focus,
+#vendorForm textarea:focus {
+  border-color: rgba(177, 18, 38, 0.42);
+  box-shadow: 0 0 0 4px rgba(177, 18, 38, 0.08);
+  background: #fff;
+}
+
+#vendorForm input[type="file"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  border: 1px dashed rgba(177, 18, 38, 0.26);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.45rem;
+}
+
+.detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.detail-badges .badge {
+  cursor: pointer;
+  user-select: none;
+}
+
+.detail-badges input[type="checkbox"] {
+  accent-color: var(--primary);
+  margin-right: 0.45rem;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.detail-actions .btn {
+  min-width: 160px;
+}
+
+/* Sidebar lists */
+
+.detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.detail-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.78rem 0.9rem;
+  border-radius: 16px;
+  background: rgba(177, 18, 38, 0.04);
+  border: 1px solid rgba(177, 18, 38, 0.06);
+}
+
+.detail-list li strong {
+  color: var(--primary);
+}
+
+/* Footer */
+
+.footer {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid rgba(235, 217, 183, 0.86);
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Utilities */
+
+@media (max-width: 900px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 4.6rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.4rem);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .navbar {
+    min-height: 72px;
+  }
+}
+"""
+
+path = Path("/mnt/data/admin.css")
+path.write_text(admin_css, encoding="utf-8")
+print(f"Created: {path}")
