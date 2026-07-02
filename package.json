@@ -1,0 +1,11 @@
+{
+  "name": "vendorsorg",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@octokit/rest": "^21.1.1",
+    "formidable": "^3.5.2",
+    "mime-types": "^2.1.35"
+  }
+}
