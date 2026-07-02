@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
   <defs>
     <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#8b1e3f"/>
-      <stop offset="100%" stop-color="#d62828"/>
+      <stop offset="0%" stop-color="#b5179e"/>
+      <stop offset="100%" stop-color="#f72585"/>
     </linearGradient>
     <radialGradient id="r" cx="30%" cy="20%" r="80%">
       <stop offset="0%" stop-color="#fff" stop-opacity=".24"/>
@@ -15,9 +15,9 @@
   <circle cx="960" cy="150" r="220" fill="#fff" opacity=".11" filter="url(#b)"/>
   <circle cx="900" cy="690" r="230" fill="#000" opacity=".14" filter="url(#b)"/>
   <rect x="72" y="72" width="1056" height="756" rx="48" fill="url(#r)" stroke="#fff" stroke-opacity=".18"/>
-  <path d="M150 640 C 290 470, 420 760, 560 590 S 840 420, 1020 620" fill="none" stroke="#ffefbc" stroke-width="18" stroke-linecap="round" stroke-opacity=".42"/>
+  <path d="M150 640 C 290 470, 420 760, 560 590 S 840 420, 1020 620" fill="none" stroke="#fff5c6" stroke-width="18" stroke-linecap="round" stroke-opacity=".42"/>
   <path d="M160 590 C 320 500, 500 720, 640 550 S 860 390, 1020 550" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-opacity=".25"/>
   <circle cx="590" cy="445" r="140" fill="#fff" fill-opacity=".16"/>
-  <text x="600" y="470" text-anchor="middle" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="800">TP</text>
-  <text x="96" y="160" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="62" font-weight="800">Tandoor Point</text>
+  <text x="600" y="470" text-anchor="middle" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="800">GC</text>
+  <text x="96" y="160" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="62" font-weight="800">Green Corner</text>
 </svg>
