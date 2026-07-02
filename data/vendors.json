@@ -1,3 +1,14 @@
 {
-  "vendors": []
+  "vendors": [
+    {
+      "id": 1,
+      "name": "ABC Salon",
+      "owner": "Rahul Das",
+      "category": "beauty",
+      "categoryName": "Beauty & Self Care",
+      "rating": 4.8,
+      "address": "Hailakandi",
+      "image": "assets/vendors/beauty/abc-salon.webp"
+    }
+  ]
 }
