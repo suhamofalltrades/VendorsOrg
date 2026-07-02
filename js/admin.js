@@ -1,6 +1,4 @@
-from pathlib import Path
-
-code = r'''import { Octokit } from "@octokit/rest";
+import { Octokit } from "@octokit/rest";
 
 const OWNER = process.env.GITHUB_OWNER;
 const REPO = process.env.GITHUB_REPO;
@@ -333,7 +331,3 @@ function prettifyLabel(value) {
     .trim()
     .replace(/\b\w/g, (ch) => ch.toUpperCase());
 }
-'''
-path = Path("/mnt/data/add-vendor.js")
-path.write_text(code, encoding="utf-8")
-print(f"Created: {path}")
